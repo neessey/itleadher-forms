@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentrée IT LeadHER - Compétences & Activités</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d81b60;
+            --primary-dark: #ad1457;
+            --primary-light: #fce4ec;
+            --dark: #23272e;
+            --gray-bg: #f8f9fc;
+            --border: #e2e8f0;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fdf2f4 0%, #f4f6fb 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            border: 1px solid rgba(216, 27, 96, 0.1);
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, #23272e 0%, #1a1d23 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .header-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d81b60, #ff4081, #d81b60);
+        }
+
+        .logo-title {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .logo-title span {
+            color: #d81b60;
+        }
+
+        .header-banner p {
+            font-size: 14px;
+            color: #a0aec0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-body {
+            padding: 40px 35px;
+        }
+
+        .intro-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 30px;
+            background: var(--primary-light);
+            padding: 16px 20px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label.field-label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--dark);
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(216, 27, 96, 0.1);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .checkbox-card {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #fff;
+        }
+
+        .checkbox-card:hover {
+            border-color: rgba(216, 27, 96, 0.4);
+            background: #fff9fb;
+        }
+
+        .checkbox-card input[type="checkbox"] {
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .checkbox-card span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .checkbox-card input[type="checkbox"]:checked ~ span {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .checkbox-card:has(input:checked) {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: var(--radius);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(216, 27, 96, 0.4);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 12px;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-banner">
+        <div class="logo-title">IT-Lead<span>HER</span></div>
+        <p>Les femmes aux commandes du Numérique</p>
+    </div>
+
+    <div class="form-body">
+        <div class="intro-text">
+            <strong>Coucou !</strong> Pour préparer au mieux notre rentrée chez IT-LeadHER, aide-nous à identifier les compétences et les activités qui te font vibrer pour cette nouvelle saison. Ça prend 2 minutes ! 🚀
+        </div>
+
+        <!-- Remplace action="https://formspree.io/f/ton_code_formspree" par ton lien Formspree -->
+        <form action="https://formspree.io/f/xojgypbj" method="POST">
+            
+            <div class="form-group">
+                <label class="field-label" for="nom">Nom et Prénom *</label>
+                <input type="text" id="nom" name="Nom_Prenom" placeholder="Ex: Aïcha Koné" required>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label" for="email">Ton Adresse Email *</label>
+                <input type="email" id="email" name="Email" placeholder="Ex: aicha@itleadher.com" required>
+            </div>
+
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 30px 0;">
+
+            <div class="form-group">
+                <div class="section-title">💻 Compétences Informatiques & Techniques</div>
+                <label class="field-label" style="margin-bottom: 12px; font-weight: normal; color: #718096;">Quels domaines aimerais-tu approfondir ? (Choix multiples)</label>
+                <div class="options-grid">
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Tech" value="Developpement Web / Mobile">
+                        <span>Développement Web / Mobile (React, Next.js, Expo...)</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Tech" value="Cybersecurite">
+                        <span>Cybersécurité & Ethical Hacking</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Tech" value="Intelligence Artificielle & Data">
+                        <span>Intelligence Artificielle & Data Science</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Tech" value="Cloud Computing & DevOps">
+                        <span>Cloud Computing & DevOps (Docker, AWS...)</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Tech" value="UI/UX Design">
+                        <span>UI/UX Design & Intégration</span>
+                    </label>
+                    <label class="field-label" for="suggestions">Une autre suggestion ?</label>
+                    <textarea id="suggestions" name="Suggestions_Idees" placeholder="Dis-nous tout..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="section-title">🌟 Compétences Personnelles & Soft Skills</div>
+                <label class="field-label" style="margin-bottom: 12px; font-weight: normal; color: #718096;">Quelles compétences transverses veux-tu booster ?</label>
+                <div class="options-grid">
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="SoftSkills" value="Prise de parole en public / Pitch">
+                        <span>Prise de parole en public / Pitch</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="SoftSkills" value="Gestion de projet & Agilite">
+                        <span>Gestion de projet & Agilité (Scrum, Kanban)</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="SoftSkills" value="Leadership & Management">
+                        <span>Leadership & Management d'équipe</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="SoftSkills" value="Gestion du temps & Productivite">
+                        <span>Gestion du temps & Productivité</span>
+                    </label>
+                     <label class="field-label" for="suggestions">Une autre suggestion ?</label>
+                    <textarea id="suggestions" name="Suggestions_Idees" placeholder="Dis-nous tout..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="section-title">🎉 Activités de Rentrée</div>
+                <label class="field-label" style="margin-bottom: 12px; font-weight: normal; color: #718096;">Quel type d'événement t'enthousiasme le plus ?</label>
+                <div class="options-grid">
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Activites" value="Afterwork / Diner d'equipe">
+                        <span>Afterwork / Dîner d'équipe</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Activites" value="Hackathon / Challenge technique">
+                        <span>Hackathon ou challenge technique interne</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Activites" value="Team building / Activite ludique">
+                        <span>Team building / Activité ludique</span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="Activites" value="Tech Talks & Ateliers">
+                        <span>Tech Talks & Ateliers de partage</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="field-label" for="suggestions">💡 Une idée de lieu, un commentaire ou une suggestion ?</label>
+                <textarea id="suggestions" name="Suggestions_Idees" placeholder="Dis-nous tout..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Envoyer mes réponses</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
